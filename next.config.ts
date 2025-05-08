@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  images: {
+    domains: ["https://unsplash.com/"], // can be removed if not needed
+  },
 };
 
 export default nextConfig;

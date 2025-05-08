@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css"; // Make sure this path matches your file
+import "./style.css"; 
 
 const skills = [
   { name: "HTML", level: 90 },

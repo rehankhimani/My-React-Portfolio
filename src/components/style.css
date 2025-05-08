@@ -83,6 +83,13 @@
   margin-bottom: 2rem;
   color: #e0e7ff;
 }
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap; /* responsive for small screens */
+  margin-top: 1rem;
+}
 
 .hero-button {
   background: linear-gradient(to right, #6366f1, #60a5fa);
@@ -100,18 +107,18 @@
 }
 
 .skills-section {
-  background-color: #1f2937; /* Dark gray background */
+  background-color: #1f2937; 
   padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #f3f4f6; /* Light text color */
+  color: #f3f4f6; 
 }
 
 .skills-heading {
   font-size: 2rem;
   font-weight: 700;
-  color: #f3f4f6; /* Light color for contrast */
+  color: #f3f4f6; 
   margin-bottom: 3rem;
   text-align: center;
 }
@@ -126,7 +133,7 @@
 
 .skill {
   width: 100%;
-  background-color: #2d3748; /* Dark background for each skill */
+  background-color: #2d3748; 
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 1.25rem;
@@ -144,12 +151,12 @@
   align-items: center;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #f3f4f6; /* Light text for skill labels */
+  color: #f3f4f6; 
 }
 
 .skill-bar-bg {
   width: 100%;
-  background-color: #4a5568; /* Darker background for skill bars */
+  background-color: #4a5568; 
   border-radius: 9999px;
   height: 0.75rem;
   overflow: hidden;
@@ -158,7 +165,7 @@
 
 .skill-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, #2563eb, #4ade80); /* Gradient color for the bars */
+  background: linear-gradient(90deg, #2563eb, #4ade80); 
   border-radius: 9999px;
   transition: width 0.6s ease-in-out;
 }
@@ -169,17 +176,17 @@
 
 
 .about-section {
-  background-color: #1f2937; /* Dark background */
+  background-color: #1f2937; 
   padding: 4rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #f3f4f6; /* Light text color for contrast */
-  height: 100vh; /* Full screen height */
+  color: #f3f4f6; 
+  height: 100vh; 
 }
 
 .about-card-wrapper {
-  background: linear-gradient(135deg, #6366f1, #ec4899); /* Gradient border */
+  background: linear-gradient(135deg, #6366f1, #ec4899); 
   padding: 2px;
   border-radius: 1rem;
   max-width: 800px;
@@ -187,7 +194,7 @@
 }
 
 .about-card {
-  background: rgba(255, 255, 255, 0.75); /* Frosted glass effect */
+  background: rgba(255, 255, 255, 0.75); 
   backdrop-filter: blur(10px);
   padding: 3rem 2rem;
   border-radius: 1rem;
@@ -227,18 +234,18 @@
 
 
 .contact-section {
-  background-color: #1f2937; /* Light, soft background */
+  background-color: #1f2937; 
   padding: 4rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #1f2937; /* Dark text for contrast */
+  color: #1f2937; 
 }
 
 .contact-card {
-  background-color: #ffffff; /* Clean white background */
+  background-color: #ffffff; 
   border-radius: 1rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   padding: 3rem 2rem;
   max-width: 600px;
   width: 80%;
@@ -247,15 +254,15 @@
 
 .contact-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15); /* Slightly more pronounced shadow */
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15); 
 }
 
 .contact-heading {
-  font-size: 2.5rem; /* Larger font size */
+  font-size: 2.5rem; 
   font-weight: 700;
   text-align: center;
   margin-bottom: 2rem;
-  color: #6366f1; /* Heading color to match icon colors */
+  color: #6366f1; 
 }
 
 .contact-item {
@@ -266,19 +273,19 @@
 }
 
 .contact-item i {
-  font-size: 1.75rem; /* Larger icon size */
-  margin-right: 1.5rem; /* More spacing between icon and text */
-  color: #6366f1; /* Icon color */
+  font-size: 1.75rem;
+  margin-right: 1.5rem; 
+  color: #6366f1; 
 }
 
 .contact-item a {
-  color: #2563eb; /* Blue links */
+  color: #2563eb; 
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .contact-item a:hover {
-  color: #ec4899; /* Hover effect to match the modern color scheme */
+  color: #ec4899; 
 }
 
 .contact-form {

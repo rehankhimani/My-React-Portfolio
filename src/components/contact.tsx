@@ -6,20 +6,20 @@ import "./style.css";
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
-  const [isSending, setIsSending] = useState(false);  // Added for handling loading state
-  const [errorMessage, setErrorMessage] = useState(""); // To show error messages
+  const [isSending, setIsSending] = useState(false);  
+  const [errorMessage, setErrorMessage] = useState(""); 
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formRef.current) return;
 
-    setIsSending(true);  // Start sending
+    setIsSending(true);  
 
     emailjs.sendForm(
-      'rehan-services',      // Replace with your EmailJS Service ID
-      'template_elwhvu9',    // Replace with your EmailJS Template ID
+      'rehan-services',      
+      'template_elwhvu9',   
       formRef.current,
-      'spsmH1DqaBMEwKvtL'    // Replace with your EmailJS User ID
+      'spsmH1DqaBMEwKvtL'   
     ).then(
       () => {
         alert('Message sent successfully!');
@@ -30,7 +30,7 @@ export default function Contact() {
         console.error('EmailJS error:', error.text);
       }
     ).finally(() => {
-      setIsSending(false);  // End sending process
+      setIsSending(false);  
     });
   };
 
@@ -63,7 +63,7 @@ export default function Contact() {
 
         <h3 className="contact-subheading">Or, send me a message directly:</h3>
 
-        {errorMessage && <p className="error-message">{errorMessage}</p>}  {/* Displaying error message */}
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
 
         <form className="contact-form" ref={formRef} onSubmit={sendEmail}>
           <input type="text" name="name" placeholder="Your Name" required />
@@ -71,7 +71,7 @@ export default function Contact() {
           <textarea name="message" placeholder="Your Message" rows={5} required></textarea>
 
           <button type="submit" disabled={isSending}>
-            {isSending ? 'Sending...' : 'Send Message'}  {/* Showing loading state */}
+            {isSending ? 'Sending...' : 'Send Message'}
           </button>
         </form>
       </div>

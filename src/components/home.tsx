@@ -27,7 +27,9 @@ export default function Home() {
         <section className="hero-section">
           <h1 className="hero-title">Hi, I'm <span className="highlight">Muhammad Rehan Khimani</span></h1>
           <p className="hero-subtitle">A Passionate Web Developer</p>
+          <div className="hero-buttons">
           <a href="/contact" className="hero-button">Hire Me!</a>
+          <a href="/My Resume (1).pdf" download className="hero-button">Download Resume</a></div>
         </section>
       </div>
     </>

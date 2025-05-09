@@ -34,7 +34,7 @@
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -55,6 +55,16 @@
 .navbar-list li a:hover {
   color: #38bdf8;
 }
+
+.navbar-toggle {
+  display: none;
+  font-size: 1.75rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 
 /* === Hero Section === */
 .hero-section {
@@ -404,6 +414,25 @@
   .navbar-list {
     flex-direction: column;
     gap: 1.5rem;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-list {
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 0;
+    display: none; /* Hide initially */
+  }
+
+  .navbar-list.open {
+    display: flex;
   }
   .hero-section {
     padding-top: 8rem; /* Add more space to account for navbar stack */

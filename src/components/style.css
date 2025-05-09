@@ -438,4 +438,12 @@
     font-size: 1rem;
     padding: 1rem;
   }
+  @media (max-width: 768px) {
+  .contact-item {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
+  }
+}
+
 }

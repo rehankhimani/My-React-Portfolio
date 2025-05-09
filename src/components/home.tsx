@@ -13,14 +13,19 @@ export default function Home() {
         style={{ backgroundImage: "url('/background2.jpg')" }}
       ></div>
 
-      <nav className="navbar">
+      <nav className={`navbar ${menuOpen ? "white-bg" : ""}`}>
         <div className="navbar-container">
+          <div className="logo">MyPortfolio</div>
+
+          {/* Toggle Button (right side on mobile) */}
           <button
             className="navbar-toggle"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             ☰
           </button>
+
+          {/* Menu List */}
           <ul className={`navbar-list ${menuOpen ? "open" : ""}`}>
             <li><Link href="/">Home</Link></li>
             <li><Link href="/skills">Skills</Link></li>

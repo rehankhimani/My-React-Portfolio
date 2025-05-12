@@ -1,11 +1,14 @@
 "use client";
 import Home from "@/components/home";
+import Navbar from "@/components/navbar";
+
 import React from "react";
 
 export default function Portfolio() {
   return (
     
     <div className="font-sans bg-gray-50 text-gray-800">
+      <Navbar />
     <Home/>
     </div>
 //       {/* Hero Section */}

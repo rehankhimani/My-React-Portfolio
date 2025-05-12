@@ -1,11 +1,11 @@
+// app/page.js ya app/home/page.js
 "use client";
-import React, { useState } from "react";
+import React from "react";
+
 import "./style.css";
-import Link from "next/link";
+import Navbar from "./navbar";
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <div className="background-wrapper">
       <div
@@ -13,28 +13,7 @@ export default function Home() {
         style={{ backgroundImage: "url('/background2.jpg')" }}
       ></div>
 
-      <nav className={`navbar ${menuOpen ? "white-bg" : ""}`}>
-        <div className="navbar-container">
-          <div className="logo">MyPortfolio</div>
-
-          {/* Toggle Button (right side on mobile) */}
-          <button
-            className="navbar-toggle"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            ☰
-          </button>
-
-          {/* Menu List */}
-          <ul className={`navbar-list ${menuOpen ? "open" : ""}`}>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/skills">Skills</Link></li>
-            <li><Link href="/projects">Projects</Link></li>
-            <li><Link href="/about">About</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar /> {/* Navbar yahan use ho raha hai */}
 
       <section className="hero-section">
         <h1 className="hero-title">

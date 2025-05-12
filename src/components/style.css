@@ -603,4 +603,7 @@
   .hero-subtitle {
     font-size: 1rem;
   }
+  .about-card{
+    margin-top: 5rem;
+  }
 }

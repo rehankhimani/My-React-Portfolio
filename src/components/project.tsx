@@ -8,6 +8,31 @@ export default function Projects() {
       <h2 className="projects-heading">Projects</h2>
       <div className="projects-grid">
         <div className="project-card">
+  <h3 className="project-title">Weather App</h3>
+  <p className="project-description">
+    A simple Weather application demonstrating React state management and deployment.
+  </p>
+  <div className="project-links">
+    <a
+      href="https://github.com/rehankhimani/Weather-app_byReact"
+      className="project-link"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      View on GitHub
+    </a>
+    <a
+      href="https://weather-app-by-react-nine.vercel.app/"
+      className="project-link"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Live Demo
+    </a>
+  </div>
+</div>
+
+        <div className="project-card">
           <h3 className="project-title">BestFood App with React Native</h3>
           <p className="project-description">
             A simple and responsive food ordering app built with React Native.

@@ -23,7 +23,7 @@ export default function Projects() {
             </a>
             <a
               href="https://weather-app-by-react-nine.vercel.app/"
-              className="project-link"
+              className="project-link" style={{gap:12}}
               target="_blank"
               rel="noopener noreferrer"
             >

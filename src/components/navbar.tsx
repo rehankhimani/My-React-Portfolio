@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Collapse } from "bootstrap";
 
 

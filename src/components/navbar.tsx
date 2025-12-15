@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Collapse } from "bootstrap";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 
 export default function Navbar() {
@@ -33,10 +33,9 @@ export default function Navbar() {
     if (window.innerWidth < 992) {
       const navbarCollapse = document.getElementById("navLinks");
       if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-       const bsCollapse = new Collapse(navbarCollapse, {
-  toggle: false,
-});
-
+        const bsCollapse = new (window as any).bootstrap.Collapse(navbarCollapse, {
+          toggle: false,
+        });
         bsCollapse.hide();
       }
     }
@@ -64,7 +63,7 @@ export default function Navbar() {
         >
           <span className="navbar-toggler-icon" />
         </button>
-        <div className="navbar-collapse" id="navLinks">
+        <div className=" navbar-collapse" id="navLinks">
           <ul className="navbar-nav ms-auto gap-3">
             {["home", "about", "skills", "services", "projects", "contact"].map((item) => (
               <li className="nav-item" key={item}>

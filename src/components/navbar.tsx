@@ -1,13 +1,15 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-
 
 export default function Navbar() {
   const navbarRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    import("bootstrap/dist/js/bootstrap.bundle.min.js");
+
     const handleScroll = () => {
       if (window.scrollY > 50) {
         navbarRef.current?.classList.add("scrolled");
@@ -20,20 +22,21 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleLinkClick = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  const handleLinkClick = async (
+    e: React.MouseEvent<HTMLAnchorElement>
   ) => {
-    // Add active class
+    if (typeof window === "undefined") return;
+
     document.querySelectorAll(".nav-link").forEach((link) =>
       link.classList.remove("active")
     );
     (e.target as HTMLElement).classList.add("active");
-  
-    // Collapse only if screen is small
+
     if (window.innerWidth < 992) {
       const navbarCollapse = document.getElementById("navLinks");
-      if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-        const bsCollapse = new (window as any).bootstrap.Collapse(navbarCollapse, {
+      if (navbarCollapse?.classList.contains("show")) {
+        const bootstrap = await import("bootstrap");
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
           toggle: false,
         });
         bsCollapse.hide();

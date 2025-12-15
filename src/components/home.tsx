@@ -4,7 +4,6 @@ import Typed from "typed.js";
 import Navbar from "./navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css"; // your custom styles
-import Header from "./navbar";
 
 export default function Home() {
   useEffect(() => {

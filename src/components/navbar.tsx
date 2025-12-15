@@ -8,7 +8,6 @@ export default function Navbar() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    import("bootstrap/dist/js/bootstrap.bundle.min.js");
 
     const handleScroll = () => {
       if (window.scrollY > 50) {

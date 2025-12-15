@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
 import Typed from "typed.js";
-import Navbar from "./navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css"; // your custom styles
 

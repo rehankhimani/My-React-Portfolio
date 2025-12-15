@@ -21,7 +21,7 @@ const projects = [
     title: "Counter App",
     description:
       "A simple counter application demonstrating React state management and deployment.",
-    imageUrl: "/Images/projects/counter.png",
+    imageUrl: "/images.jpeg",
     github: "https://github.com/rehankhimani/deploy-counter-new",
   },
   {
@@ -35,7 +35,7 @@ const projects = [
     title: "Portal Project",
     description:
       "A portal-style application built according to class specifications, using modern UI principles.",
-    imageUrl: "/Images/projects/portal.png",
+    imageUrl: "/portal.png",
     github: "https://github.com/rehankhimani/parc-app-acc-to-class",
   },
   {

@@ -9,7 +9,7 @@ import Header from "./navbar";
 export default function Home() {
   useEffect(() => {
     const typed = new Typed("#typed-text", {
-      strings: ["Full Stack Developer", "MERN Stack Developer"],
+      strings: ["Full Stack Developer", "Junior Developer"],
       typeSpeed: 60,
       backSpeed: 30,
       loop: true,
@@ -42,11 +42,11 @@ export default function Home() {
             <p className="text-muted fs-5 mb-4">
               I build full-stack web applications using modern frameworks and clean UI/UX principles to deliver powerful digital experiences.
             </p>
-            <a href="/My Resume (1).pdf" download className="btn btn-primary btn-lg rounded-3 me-3">
+            <a href="/Muhammad Rehan Khimani (2).pdf" download className="btn btn-primary btn-lg rounded-3 me-3">
               + Download Resume
             </a>
             <a
-              href="https://wa.me/923242187077"  // Replace with your number
+              href="https://wa.me/923242187077"  
               target="_blank"
               className="btn btn-outline-primary btn-lg  rounded-3"
             >

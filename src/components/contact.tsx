@@ -34,47 +34,107 @@ export default function Contact() {
     });
   };
 
-  return (
-    <section className="contact-section" id="contact">
-      <div className="contact-card">
-        <h2 className="contact-heading">Contact Me</h2>
+   return (
+    <section className="py-5" id="contact">
+      <div className="container">
+        <h2 className="text-center section-title mb-5" data-aos="fade-up">
+          Let's Connect
+        </h2>
+        <div className="row">
+          {/* Contact Info */}
+          <div className="col-md-4 mb-4" data-aos="fade-right">
+            <div className="bg-light p-4 shadow-sm rounded-4 h-100">
+              <h5 className="fw-bold">Contact Info</h5>
+              <p>
+                <FaEnvelope className="me-2 text-primary" />
+                <a href="mailto:muhammadrehanabdulqadir@gmail.com">
+                  muhammadrehanabdulqadir@gmail.com
+                </a>
+              </p>
+              <p>
+                <FaPhoneAlt className="me-2 text-primary" />
+                <a href="tel:+923243187077">+92 324 3187077</a>
+              </p>
+              <p>
+                <i className="bi bi-geo-alt-fill me-2 text-primary"></i>
+                Karachi, Pakistan
+              </p>
+              <p>
+                <FaGithub className="me-2 text-primary" />
+                <a
+                  href="https://github.com/rehankhimani"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  github.com/rehankhimani
+                </a>
+              </p>
+              <p>
+                <FaLinkedin className="me-2 text-primary" />
+                <a
+                  href="https://www.linkedin.com/in/muhammadrehan25/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  linkedin.com/in/muhammadrehan25
+                </a>
+              </p>
+            </div>
+          </div>
 
-        <div className="contact-item">
-          <FaEnvelope />
-          <p>
-            Email: <a href="mailto:muhammadrehanabdulqadir@gmail.com">muhammadrehanabdulqadir@gmail.com</a>
-          </p>
+          {/* Contact Form */}
+          <div className="col-md-8" data-aos="fade-left">
+            <form
+              ref={formRef}
+              onSubmit={sendEmail}
+              className="bg-light shadow-sm p-4 rounded-4"
+            >
+              <h5 className="fw-bold mb-3">Send me a message directly</h5>
+
+              {errorMessage && (
+                <p className="text-danger mb-3">{errorMessage}</p>
+              )}
+
+              <div className="mb-3">
+                <label className="form-label">Name</label>
+                <input
+                  name="name"
+                  type="text"
+                  className="form-control"
+                  required
+                />
+              </div>
+
+              <div className="mb-3">
+                <label className="form-label">Email</label>
+                <input
+                  name="email"
+                  type="email"
+                  className="form-control"
+                  required
+                />
+              </div>
+
+              <div className="mb-3">
+                <label className="form-label">Message</label>
+                <textarea
+                  name="message"
+                  rows={5}
+                  className="form-control"
+                  required
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="btn btn-primary px-5 py-2 rounded-pill shadow-sm"
+                disabled={isSending}
+              >
+                {isSending ? "Sending..." : "Send Message"}
+              </button>
+            </form>
+          </div>
         </div>
-
-        <div className="contact-item">
-          <FaPhoneAlt />
-          <p>Phone: <a href="tel:923243187077">+92 (324) 3187077</a></p>
-        </div>
-
-        <div className="contact-item">
-          <FaGithub />
-          <p>GitHub: <a href="https://github.com/rehankhimani" target="_blank" rel="noopener noreferrer">@rehankhimani</a></p>
-        </div>
-
-        <div className="contact-item">
-          <FaLinkedin />
-          <p>LinkedIn: <a href="https://www.linkedin.com/in/muhammadrehan25/" target="_blank" rel="noopener noreferrer">/muhammadrehan</a></p>
-        </div>
-
-        <h3 className="contact-subheading">Or, send me a message directly:</h3>
-
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-        <form className="contact-form" ref={formRef} onSubmit={sendEmail}>
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" placeholder="Your Message" rows={5} required></textarea>
-
-          <button type="submit" disabled={isSending}>
-            {isSending ? 'Sending...' : 'Send Message'}
-          </button>
-        </form>
       </div>
     </section>
-  );
-}
+  );}

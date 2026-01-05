@@ -1,9 +1,10 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function Navbar() {
-  const navbarRef = useRef<HTMLElement | null>(null);
+  const headerRef = useRef<HTMLElement | null>(null);
+  const [open, setOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("home");
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -11,9 +12,9 @@ export default function Navbar() {
 
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        navbarRef.current?.classList.add("scrolled");
+        headerRef.current?.classList.add("scrolled");
       } else {
-        navbarRef.current?.classList.remove("scrolled");
+        headerRef.current?.classList.remove("scrolled");
       }
     };
 
@@ -21,67 +22,42 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleLinkClick = async (
-    e: React.MouseEvent<HTMLAnchorElement>
-  ) => {
-    if (typeof window === "undefined") return;
-
-    document.querySelectorAll(".nav-link").forEach((link) =>
-      link.classList.remove("active")
-    );
-    (e.target as HTMLElement).classList.add("active");
-
-    if (window.innerWidth < 992) {
-      const navbarCollapse = document.getElementById("navLinks");
-      if (navbarCollapse?.classList.contains("show")) {
-        const bootstrap = await import("bootstrap");
-        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-          toggle: false,
-        });
-        bsCollapse.hide();
-      }
-    }
+  const handleLinkClick = (link: string) => {
+    setActiveLink(link);
+    setOpen(false); // close mobile menu
   };
-  
 
   return (
-    <nav
-      id="navbar"
-      ref={navbarRef}
-      className="navbar navbar-expand-lg navbar-dark  fixed-top"
-    >
-      <div className="container">
-        <a className="navbar-brand" href="#">
-          MRK
-        </a>
+    <header ref={headerRef} className="header-section">
+      <div className="container d-flex align-items-center justify-content-between">
+        
+        {/* Logo */}
+        <div className="logo-wrapper">
+          <a href="#" className="navbar-brand">MRK</a>
+        </div>
+
+        {/* Mobile Toggler */}
         <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navLinks"
-          aria-controls="navLinks"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          className="navbar-toggler d-lg-none"
+          onClick={() => setOpen(!open)}
         >
-          <span className="navbar-toggler-icon" />
+          ☰
         </button>
-        <div className=" navbar-collapse" id="navLinks">
-          <ul className="navbar-nav ms-auto gap-3">
-            {["home", "about", "skills", "services", "projects", "contact"].map((item) => (
-              <li className="nav-item" key={item}>
-                <a
-                  className={`nav-link ${item === "home" ? "active" : ""}`}
-                  href={`#${item}`}
-                  onClick={handleLinkClick}
-                >
-                  {item.charAt(0).toUpperCase() + item.slice(1)}
-                </a>
-              </li>
-            ))}
-          </ul>
+
+        {/* Navigation Links */}
+        <div className={`nav-links ${open ? "show" : ""}`}>
+          {["home","about","skills","services","projects","contact"].map(item => (
+            <a
+              key={item}
+              href={`#${item}`}
+              className={`nav-link ${activeLink === item ? "active" : ""}`}
+              onClick={() => handleLinkClick(item)}
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </a>
+          ))}
         </div>
       </div>
-    </nav>
+    </header>
   );
-
 }

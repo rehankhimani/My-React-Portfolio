@@ -9,7 +9,7 @@ const projects = [
       "A simple Weather application demonstrating React state management and deployment.",
     imageUrl: "/Project1.jpg", // Place image in /public/Images/projects/
     github: "https://github.com/rehankhimani/Weather-app_byReact",
-    live: "https://weather-app-by-react-nine.vercel.app/",
+    live: "https://weather-app-by-rehan.vercel.app/",
   },
   {
     title: "BestFood App (React Native)",

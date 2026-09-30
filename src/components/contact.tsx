@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
@@ -40,27 +41,27 @@ export default function Contact() {
         <h2 className="text-center section-title mb-5" data-aos="fade-up">
           Let's Connect
         </h2>
-        <div className="row">
+        <div className="row align-items-stretch">
           {/* Contact Info */}
           <div className="col-md-4 mb-4" data-aos="fade-right">
             <div className="bg-light p-4 shadow-sm rounded-4 h-100">
               <h5 className="fw-bold">Contact Info</h5>
-              <p>
-                <FaEnvelope className="me-2 text-primary" />
+              <p className="d-flex align-items-center">
+                <FaEnvelope className="me-2 text-primary flex-shrink-0" />
                 <a href="mailto:muhammadrehanabdulqadir@gmail.com">
                   muhammadrehanabdulqadir@gmail.com
                 </a>
               </p>
-              <p>
-                <FaPhoneAlt className="me-2 text-primary" />
+              <p className="d-flex align-items-center">
+                <FaPhoneAlt className="me-2 text-primary flex-shrink-0" />
                 <a href="tel:+923243187077">+92 324 3187077</a>
               </p>
-              <p>
+              <p className="d-flex align-items-center">
                 <i className="bi bi-geo-alt-fill me-2 text-primary"></i>
                 Karachi, Pakistan
               </p>
-              <p>
-                <FaGithub className="me-2 text-primary" />
+              <p className="d-flex align-items-center">
+                <FaGithub className="me-2 text-primary flex-shrink-0" />
                 <a
                   href="https://github.com/rehankhimani"
                   target="_blank"
@@ -69,8 +70,8 @@ export default function Contact() {
                   github.com/rehankhimani
                 </a>
               </p>
-              <p>
-                <FaLinkedin className="me-2 text-primary" />
+              <p className="d-flex align-items-center mb-0">
+                <FaLinkedin className="me-2 text-primary flex-shrink-0" />
                 <a
                   href="https://www.linkedin.com/in/muhammadrehan25/"
                   target="_blank"
@@ -83,11 +84,11 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="col-md-8" data-aos="fade-left">
+          <div className="col-md-8 mb-4" data-aos="fade-left">
             <form
               ref={formRef}
               onSubmit={sendEmail}
-              className="bg-light shadow-sm p-4 rounded-4"
+              className="bg-light shadow-sm p-4 rounded-4 h-100"
             >
               <h5 className="fw-bold mb-3">Send me a message directly</h5>
 

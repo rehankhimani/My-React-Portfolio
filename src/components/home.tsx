@@ -7,7 +7,7 @@ import "./style.css"; // your custom styles
 export default function Home() {
   useEffect(() => {
     const typed = new Typed("#typed-text", {
-      strings: ["Full Stack Developer", "Junior Developer"],
+      strings: ["Backend Engineer", "Full Stack Developer", "Node.js Developer"],
       typeSpeed: 60,
       backSpeed: 30,
       loop: true,
@@ -38,13 +38,13 @@ export default function Home() {
               <span id="typed-text"></span>
             </h3>
             <p className="text-muted fs-5 mb-4">
-              I build full-stack web applications using modern frameworks and clean UI/UX principles to deliver powerful digital experiences.
+              I build scalable backend systems and full-stack web applications using Node.js, Express.js, and modern frameworks — focused on clean architecture, secure APIs, and real-world SaaS platforms.
             </p>
-            <a href="/Muhammad Rehan Khimani (2).pdf" download className="btn btn-primary btn-lg rounded-3 me-3">
+            <a href="/Muhammad Rehan Khimani Backend Developer.pdf" download className="btn btn-primary btn-lg rounded-3 me-3">
               + Download Resume
             </a>
             <a
-              href="https://wa.me/923242187077"  
+              href="https://wa.me/923243187077"  
               target="_blank"
               className="btn btn-outline-primary btn-lg  rounded-3"
             >

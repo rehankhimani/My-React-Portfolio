@@ -1,23 +1,30 @@
+
 "use client";
 import React from "react";
 import "./style.css";
 
 const codingSkills = [
-  { name: "HTML, CSS ", level: 90 },
-  { name: " JavaScript", level: 80 },
-
-  { name: "React JS, Next JS", level: 80 },
-  { name: "ASP.Net MVC", level: 50 },
-  { name: "SQL Server", level: 55 },
+  { name: "Node.js", level: 90 },
+  { name: "Express.js", level: 90 },
+  { name: "REST APIs", level: 90 },
+  { name: "MySQL", level: 85 },
+  { name: "JavaScript / TypeScript", level: 85 },
+  { name: "JWT Authentication", level: 85 },
+  { name: "Third-Party API Integration", level: 85 },
+  { name: "Git / GitHub", level: 85 },
+  { name: "React.js / Next.js", level: 70 },
+  { name: "HTML / CSS / Bootstrap", level: 70 },
+  { name: "ASP.NET MVC / C#", level: 30 },
+  { name: "SQL Server / Entity Framework", level: 30 },
 ];
 
 const softSkills = [
-  { name: "Active Listening", value: 90 },
-  { name: "Team Collaboration", value: 80 },
-  { name: "Time Management", value: 75 },
-  { name: "Critical Thinking", value: 90 },
-  { name: "Problem Solving", value: 80 },
-  { name: "Public Speaking", value: 75 },
+  { name: "Problem Solving", value: 90 },
+  { name: "Backend Debugging", value: 90 },
+  { name: "API & System Design", value: 85 },
+  { name: "Database Management", value: 85 },
+  { name: "Team Collaboration", value: 85 },
+  { name: "Critical Thinking", value: 85 },
 ];
 
 export default function Skills() {
@@ -26,8 +33,7 @@ export default function Skills() {
       className="py-5 g-5"
       id="skills"
       style={{
-       background: "url('/skill_bg.png') center center / cover no-repeat"
-
+        background: "url('/skill_bg.png') center center / cover no-repeat",
       }}
     >
       <div className="container">
@@ -37,22 +43,29 @@ export default function Skills() {
         >
           Skills
         </h2>
+
         <div className="row gx-5 gy-4">
-          {/* Left Column: Coding Skills */}
+          {/* Left Column: Technical Skills */}
           <div
             className="col-md-6 bg-white p-4 shadow-sm rounded"
             data-aos="fade-right"
           >
-            <h4 className="mb-4 text-dark fw-bold">Coding Skills</h4>
+            <h4 className="mb-4 text-dark fw-bold">Technical Skills</h4>
+
             {codingSkills.map((skill, index) => (
               <div key={index} className="mb-4">
                 <p className="mb-1 fw-medium">{skill.name}</p>
-                <div className="progress rounded-pill" style={{ height: "8px" }}>
+
+                <div
+                  className="progress rounded-pill"
+                  style={{ height: "8px" }}
+                >
                   <div
                     className="progress-bar bg-primary"
                     style={{ width: `${skill.level}%` }}
                   ></div>
                 </div>
+
                 <span className="badge bg-light text-primary border mt-1 float-end">
                   {skill.level}%
                 </span>
@@ -60,20 +73,27 @@ export default function Skills() {
             ))}
           </div>
 
-          {/* Right Column: Other Skills (Circular SVG) */}
+          {/* Right Column: Professional Skills */}
           <div
             className="col-md-6 bg-white p-4 shadow-sm rounded"
             data-aos="fade-left"
           >
-            <h4 className="mb-4 text-dark fw-bold">Other Skills</h4>
+            <h4 className="mb-4 text-dark fw-bold">
+              Professional Skills
+            </h4>
+
             <div className="row text-center gx-5 gy-4">
               {softSkills.map((skill, index) => {
                 const dashOffset = 283 - skill.value * 2.83;
+
                 return (
                   <div className="col-6" key={index}>
                     <div
                       className="position-relative d-inline-block"
-                      style={{ width: "100px", height: "100px" }}
+                      style={{
+                        width: "100px",
+                        height: "100px",
+                      }}
                     >
                       <svg width="100" height="100">
                         <circle
@@ -84,6 +104,7 @@ export default function Skills() {
                           strokeWidth="10"
                           fill="none"
                         />
+
                         <circle
                           cx="50"
                           cy="50"
@@ -97,10 +118,12 @@ export default function Skills() {
                           transform="rotate(-90 50 50)"
                         />
                       </svg>
+
                       <div className="position-absolute top-50 start-50 translate-middle fw-bold">
                         {skill.value}%
                       </div>
                     </div>
+
                     <p className="mt-2 fw-medium">{skill.name}</p>
                   </div>
                 );
